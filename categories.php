@@ -1,3 +1,7 @@
+<?php
+    require_once "components/navbar.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,33 +13,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- navbar section starts here-->
-<section class="navbar">
-    <div class="container">
-        <div class="logo">
-            <img src="images/logo3.png" alt="App Logo" class="img-responsive">
-        </div>
-        <div class="menu text-right">
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="categories.php">Categories</a>
-                </li>
-                <li>
-                    <a href="foods.php">Foods</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="clearfix"></div>
-        </div>
-</section>
-<!-- navbar section ends here-->
 
     <!-- categories section starts here-->
     <section class="categories">

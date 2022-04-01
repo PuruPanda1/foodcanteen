@@ -1,3 +1,6 @@
+<?php
+ require_once "components/navbar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
 </head>
 <body>
     <!-- navbar section starts here-->
-    <section class="navbar">
+    <!-- <section class="navbar">
         <div class="container">
             <div class="logo">
                 <img src="images/logo3.png" alt="App Logo" class="img-responsive">
@@ -29,6 +32,9 @@
                     <li>
                         <a href="#">Contact Us</a>
                     </li>
+                    <li>
+                        <a href="./login.php">Log In</a>
+                    </li>
                 </ul>
             </div>
 
@@ -36,9 +42,7 @@
 
             </div>
         </div>
-        
-
-    </section>
+    </section> -->
     <!-- navbar section ends here-->
 
     <!-- food search section starts here-->
