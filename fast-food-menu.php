@@ -28,84 +28,11 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Fast Food Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/sw.jpg" alt="Grilled Sandwich" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Veg. Grilled Sandwich</h4>
-                    <p class="food-prize">Rs. 50</p>
-                    <p class="food-detail">Bread stuffed with veggies,mayo,sauce</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/burger.jpg" alt="Aaloo Tikki Burger" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Aaloo Tikki Burger</h4>
-                    <p class="food-prize">Rs. 100</p>
-                    <p class="food-detail">Burger bun stuffed with aloo tikki</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/maggie.jpg" alt="maggie" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Cheese maggie</h4>
-                    <p class="food-prize">Rs. 40</p>
-                    <p class="food-detail">Instant maggie with some vegetables</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/vp.jpg" alt="Vadapav" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Vadapav</h4>
-                    <p class="food-prize">Rs. 15</p>
-                    <p class="food-detail">Bun having aloovada</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/ff.jpg" alt="French Fries" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>French Fries</h4>
-                    <p class="food-prize">Rs. 70</p>
-                    <p class="food-detail">Made with potato</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/dabeli.jpg" alt="Dabeli" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Dabeli</h4>
-                    <p class="food-prize">Rs. 15</p>
-                    <p class="food-detail">Bun stuffed with potato dabeli masala</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(13,19);
+            ?>
             <div class="clearfix"></div>
         </div>
 

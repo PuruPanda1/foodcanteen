@@ -28,84 +28,11 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Italian Food Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Cheese-Ravioli.jpg" alt="Cheese-Ravioli" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Cheese-Ravioli</h4>
-                    <p class="food-prize">Rs. 70</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Italian-Spaghetti.png" alt="Spaghetti" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Spaghetti</h4>
-                    <p class="food-prize">Rs. 75</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Pizza</h4>
-                    <p class="food-prize">Rs. 100</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/redsauce_pasta.jpg" alt="Red_sauce_pasta" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Red-sauce Pasta</h4>
-                    <p class="food-prize">Rs. 75</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Pasta-in-White-Sauce.jpg" alt="White_sauce_pasta" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>White-sauce Pasta</h4>
-                    <p class="food-prize">Rs. 70</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/panzanella.jpg" alt="panzanella" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Panzanella</h4>
-                    <p class="food-prize">Rs. 65</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(20,25);
+            ?>
             <div class="clearfix"></div>
         </div>
 

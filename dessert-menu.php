@@ -28,84 +28,11 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Dessert Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/chocolate-muffin.jpg" alt="Muffin" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chocolate Muffin</h4>
-                    <p class="food-prize">Rs. 40</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/kulfi.jpg" alt="Kulfi" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Kulfi</h4>
-                    <p class="food-prize">Rs. 25</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/pancakes.jpg" alt="Pancakes" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Pancakes</h4>
-                    <p class="food-prize">Rs. 95</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/icecream.jpeg" alt="icecream" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chocolate cake with ice cream</h4>
-                    <p class="food-prize">Rs. 85</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/chocolate_shake.jpg" alt="chocolate_shake" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chocolate Shake</h4>
-                    <p class="food-prize">Rs. 50</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/rajas.png" alt="Rajasthani Ice-cream" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Rajasthani Ice-cream</h4>
-                    <p class="food-prize">Rs. 35</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(7,12);
+            ?>
             <div class="clearfix"></div>
         </div>
 

@@ -1,5 +1,6 @@
 <?php
     require_once "components/navbar.php";
+    require_once "config.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,96 +24,19 @@
 
     </section>
     <!-- food search section ends here-->
-
     <!-- food menu section starts here-->
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Chinese Food Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/veg-manchurian.jpeg" alt="veg-manchurian" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Veg.Manchurian</h4>
-                    <p class="food-prize">Rs. 70</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Hakka-Noodles.jpg" alt="Hakka-Noodles" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Hakka-Noodles</h4>
-                    <p class="food-prize">Rs. 80</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/chilli-paneer.jpg" alt="chilli-paneer" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chilli-Paneer</h4>
-                    <p class="food-prize">Rs. 60</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/s_rice.jpg" alt="Schezwan-Rice" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Schezwan-Rice</h4>
-                    <p class="food-prize">Rs. 75</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/momo.jpg" alt="Momos" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Momos</h4>
-                    <p class="food-prize">Rs. 50</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/chinese-hot-and-sour-soup-sq.jpg" alt="Chinese Soup" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chinese Soup</h4>
-                    <p class="food-prize">Rs. 40</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(1,6);
+            ?>
             <div class="clearfix"></div>
         </div>
-
-
     </section>
     <!-- food menu section ends here-->
-
     <!-- social section starts here-->
     <section class="social">
         <div class="container text-center">
@@ -128,18 +52,13 @@
                 </li>
             </ul>
         </div>
-
-
     </section>
     <!-- social section ends here-->
-
     <!-- footer section starts here-->
     <section class="footer">
         <div class="container text-center">
             <p>All rights reserved, designed by <a href="#">Dhrumi Prajapati</a></p>
         </div>
-
-
     </section>
     <!-- footer section ends here-->
 </body>

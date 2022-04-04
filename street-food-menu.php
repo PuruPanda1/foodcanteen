@@ -28,84 +28,11 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Street Food Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Aloo-Tikki-Chaat.jpg" alt="Aloo-Tikki-Chaat" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Aloo-Tikki-Chaat</h4>
-                    <p class="food-prize">Rs. 30</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/dahi-puri.jpg" alt="Dahi-Puri" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Dahi-Puri</h4>
-                    <p class="food-prize">Rs. 20</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Bhel.JPG" alt="Bhel" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Bhel</h4>
-                    <p class="food-prize">Rs. 20</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/sf.jpg" alt="Pani-Puri" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Pani-Puri</h4>
-                    <p class="food-prize">Rs. 15</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/ragda-pattice.jpg" alt="ragda-pattice" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Ragda-Pattice</h4>
-                    <p class="food-prize">Rs. 50</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Raj-kachori.jpg" alt="Kachori" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Kachori</h4>
-                    <p class="food-prize">Rs. 15</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(55,60);
+            ?>
             <div class="clearfix"></div>
         </div>
 

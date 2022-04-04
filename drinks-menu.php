@@ -28,84 +28,11 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Drinks Menu</h2>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Masala_Chai.jpg" alt="Masala_Chai" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Masala Chai</h4>
-                    <p class="food-prize">Rs. 30</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/lemon_tea.jpeg" alt="lemon_tea" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Lemon Tea</h4>
-                    <p class="food-prize">Rs. 40</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/coffee.jpg" alt="coffee" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Coffee</h4>
-                    <p class="food-prize">Rs. 50</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Buttermilk.jpg" alt="Buttermilk" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Buttermilk</h4>
-                    <p class="food-prize">Rs. 25</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/lassi.jpg" alt="Lassi" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Lassi</h4>
-                    <p class="food-prize">Rs. 35</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/chocolate_shake.jpg" alt="Chocolate_Shake" class="img-responsive img-curve"></a>
-                </div>
-                <div class="food-menu-desc">
-                    <h4>Chocolate Shake</h4>
-                    <p class="food-prize">Rs. 45</p>
-                    <p class="food-detail">Made with...</p>
-                    
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
+            <?php 
+                require_once "components/food_menu.php";
+                // calls the show function  to represent menu according to the serial number given in the database
+                show(61,66);
+            ?>
             <div class="clearfix"></div>
         </div>
 

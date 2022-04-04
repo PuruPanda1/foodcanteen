@@ -1,5 +1,29 @@
 <?php
     require_once "components/navbar.php";
+    require_once "config.php";
+    $food_name = $food_image = "";
+    $food_price = 0;
+    if(isset($_GET['food_id']))
+    {
+        if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
+        {
+            echo '<script>
+            alert("Kindly Login to order");
+            </script>';
+        }
+        $food_id = $_GET['food_id'];
+        // $sql = "SELECT * FROM `items` WHERE sl = `$food_id`;";
+        $sql = "SELECT * FROM `items` WHERE sl =" . $_GET['food_id'] .";";
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($result);
+        $food_name = $row['name'];
+        $food_price = $row['price'];
+        $food_image = $row['image'];
+    }
+    else{
+        header("location:index.php");
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,17 +42,17 @@
             
             <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
 
-            <form action="#" class="order text-white">
+            <form action="./confirmorder.php" class="order text-white" method="POST">
                 <fieldset>
                     <legend>Selected Food</legend>
 
                     <div class="food-menu-img">
-                        <img src="images/puff.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        <img src=<?php echo $food_image?> alt=<?php echo $food_name?> class="img-responsive img-curve">
                     </div>
     
                     <div class="food-menu-desc">
-                        <h3>Food Title</h3>
-                        <p class="food-price">$2.3</p>
+                        <h3><?php echo $food_name?></h3>
+                        <p class="food-price">₹ <?php echo $food_price?></p>
 
                         <div class="order-label">Quantity</div>
                         <input type="number" name="qty" class="input-responsive" value="1" required>
@@ -53,9 +77,7 @@
 
                     <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
                 </fieldset>
-
             </form>
-
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
