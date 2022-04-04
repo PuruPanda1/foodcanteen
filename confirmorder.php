@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             $cemail = $_POST['customer_email'];
             $caddress = $_POST['customer_address'];
             $total = $_POST['qty']*$_POST['food_price'];
-            $sql = "INSERT INTO `foodorder` (`order_no`, `food_name`, `food_id`, `price`, `quantity`, `total`, `datetime`, `status`, `customer_name`, `customer_number`, `customer_email`, `customer_address`) VALUES (NULL, '$fname', '$fid', '$fprice', '$qty', '$total', current_timestamp(), 'Ordered', '$cname', '$cnumber', '$cemail', '$caddress');";
+            $sql = "INSERT INTO `foodorder` (`order_no`, `food_name`, `food_id`, `price`, `quantity`, `total`, `datetime`, `status`, `customer_name`, `customer_number`, `customer_email`) VALUES (NULL, '$fname', '$fid', '$fprice', '$qty', '$total', current_timestamp(), 'Ordered', '$cname', '$cnumber', '$cemail');";
             $result = mysqli_query($conn,$sql);
             if($result)
             {

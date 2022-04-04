@@ -83,9 +83,6 @@
                     <div class="order-label">Email</div>
                     <input type="email" name="customer_email" placeholder="E.g. hi@dhrumjip.com" value='<?php echo $email?>' class="input-responsive" required>
 
-                    <div class="order-label">Address</div>
-                    <textarea name="customer_address" rows="10" placeholder="E.g. Class no, Floor, Dept, Area.." value='<?php ?>' class="input-responsive" required></textarea>
-
                     <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
                 </fieldset>
             </form>
