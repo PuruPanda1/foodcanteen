@@ -11,6 +11,13 @@
             alert("Kindly Login to order");
             </script>';
         }
+        else
+        {
+            $username = $_SESSION['username'];
+            $email = $_SESSION['email'];
+            // $phone_no = $_SESSION['phone_no'];
+            // $address = $_SESSION['address'];
+        }
         $food_id = $_GET['food_id'];
         // $sql = "SELECT * FROM `items` WHERE sl = `$food_id`;";
         $sql = "SELECT * FROM `items` WHERE sl =" . $_GET['food_id'] .";";
@@ -19,6 +26,7 @@
         $food_name = $row['name'];
         $food_price = $row['price'];
         $food_image = $row['image'];
+
     }
     else{
         header("location:index.php");
@@ -43,6 +51,9 @@
             <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
 
             <form action="./confirmorder.php" class="order text-white" method="POST">
+                <input type="hidden" name="food_name" value="<?php echo $food_name ?>">
+                <input type="hidden" name="food_id" value="<?php echo $food_id ?>">
+                <input type="hidden" name="food_price" value="<?php echo $food_price ?>">
                 <fieldset>
                     <legend>Selected Food</legend>
 
@@ -64,16 +75,16 @@
                 <fieldset>
                     <legend>Delivery Details</legend>
                     <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="E.g. Dhrumi Prajapati" class="input-responsive" required>
+                    <input type="text" name="customer_name" placeholder="E.g. Dhrumi Prajapati" value='<?php echo $username?>' class="input-responsive" required>
 
                     <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required>
+                    <input type="tel" name="customer_number" placeholder="E.g. 9843xxxxxx" value='<?php ?>'class="input-responsive" required>
 
                     <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hi@dhrumjip.com" class="input-responsive" required>
+                    <input type="email" name="customer_email" placeholder="E.g. hi@dhrumjip.com" value='<?php echo $email?>' class="input-responsive" required>
 
                     <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="E.g. Class no, Floor, Dept, Area.." class="input-responsive" required></textarea>
+                    <textarea name="customer_address" rows="10" placeholder="E.g. Class no, Floor, Dept, Area.." value='<?php ?>' class="input-responsive" required></textarea>
 
                     <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
                 </fieldset>

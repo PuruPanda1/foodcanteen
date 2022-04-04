@@ -17,7 +17,7 @@
                         <li>
                             <a href="#">Contact Us</a>
                         </li>
-                        <li>
+                        <li class="profile">
                             <?php
                             session_start();
                             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true)
@@ -26,17 +26,19 @@
                             }
                             else
                             {
-                                echo '<a href="./logout.php">';
-                                echo $_SESSION['username'];
-                                echo '</a>';
+                                    echo '<div class="dropdown">
+                                    <button class="dropbtn">'. $_SESSION["username"].'</button>
+                                    <div class="dropdown-content">
+                                    <a href="./previousorders.php">Orders</a>
+                                    <a href="./logout.php">Log Out</a>
+                                    </div>
+                                  </div>';
                             }
                             ?>
                         </li>
                     </ul>
                 </div>
-
                 <div class="clearfix">
-
                 </div>
             </div>
         </section>   
