@@ -322,7 +322,7 @@ fieldset{
   /* order page css */
 
   .ordersection{
-      width: 80%;
+      width: 90%;
       margin: auto;
       font-family: 'Roboto', sans-serif;
   }
@@ -413,4 +413,11 @@ fieldset{
       padding: 2px;
       min-width: 150px;
       border-radius: 5px;
+}
+
+/*  admin panel dashboard design */
+
+.dashboard_container{
+    display: flex;
+    justify-content: space-between;
 }

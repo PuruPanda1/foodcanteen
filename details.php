@@ -100,7 +100,7 @@ function showOrders()
             <td>
                 <form action='details.php' method='POST'>
                 <input type='hidden' name='id' value='$order_no'>
-                <select name='orderstatus' id='orderstatus'>
+                <select name='orderstatus' id='orderstatus' style='padding: 2px; border-radius: 5px'>
                 <option>$status</option>
                 <option>$option1</option>
                 <option>$option2</option>

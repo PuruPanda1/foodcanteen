@@ -1,14 +1,18 @@
 <?php
 require_once ("config.php");
+session_start();
+if(!isset($_SESSION['adminlog']) || $_SESSION['adminlog']!=true)
+{
+    header("location: adminlogin.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodOrderWeb</title>
+    <title>Admin Panel</title>
     <!-- linking css file here-->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,7 +26,15 @@ require_once ("config.php");
         color: red;
 margin-top: 40px;">ADMIN PANEL</h1>
     <section class="adminheadsection">
-        <h1>Dashboard</h1>
+        <div class="dashboard_container">
+            <h1>Dashboard</h1>
+            <div class="dropdown">
+                <button class="dropbtn"><?php echo $_SESSION["adminusername"] ?> </button>
+                <div class="dropdown-content">
+                    <a href="./logout.php">Log Out</a>
+                </div>
+            </div>
+            </div>
         <div>
             <ul class="progress">
                 <li>
@@ -135,7 +147,8 @@ margin-top: 40px;">ADMIN PANEL</h1>
         <!-- orders section -->
         <section class="ordersection" style="display: none;" id="orders">
             <h2>Orders</h2>
-            <table border=0 class="order_table">
+            <div id="orderid"></div>
+            <!-- <table border=0 class="order_table">
                 <tr>
                     <th>TimeStamp</th>
                     <th>Order No.</th>
@@ -148,12 +161,18 @@ margin-top: 40px;">ADMIN PANEL</h1>
                     <th>Customer No.</th>
                     <th>Status</th>
                 </tr>
-            <?php
-                require_once ("details.php");
-                showOrders();
-            ?>
-            </table>
+                <?php
+                // require_once ("details.php");
+                // showOrders();
+                ?>
+            </table> -->
         </section>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#orderid").load("./orderdetails.php");
+        });
+    </script>
 </body>
 
 </html>

@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     if(empty($email_error) && empty($password_error) && empty($password_error))
     {
         // inserting data into mysql from the html form
-        $sql = "INSERT INTO `users` (`userid`,`username`, `email`, `password`, `datetime`) VALUES (1,'$username', '$email', '$password', current_timestamp());";
+        $sql = "INSERT INTO `users` (`userid`,`username`, `email`, `password`, `datetime`) VALUES (NULL,'$username', '$email', '$password', current_timestamp());";
         $result = mysqli_query($conn,$sql);
     }
     else
