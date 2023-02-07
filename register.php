@@ -46,19 +46,20 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 $password = trim($_POST['password']);
             }
             // checking for the confirmed password 
-            if(trim($_POST['cnf_password']!=$password)){
-                $password_error = "Password does not match";
-            }
-            else{
-                $cnf_password = trim($_POST['cnf_password']);
-            }
+            // if(trim($_POST['cnf_password']!=$password)){
+            //     $password_error = "Password does not match";
+            // }
+            // else{
+            //     $cnf_password = trim($_POST['cnf_password']);
+            // }
         }
     }
     if(empty($email_error) && empty($password_error) && empty($password_error))
     {
         // inserting data into mysql from the html form
-        $sql = "INSERT INTO `users` (`userid`,`username`, `email`, `password`, `datetime`) VALUES (NULL,'$username', '$email', '$password', current_timestamp());";
+        $sql = "INSERT INTO `users` (`id`,`username`, `email`, `password`, `datetime`) VALUES (NULL,'$username', '$email', '$password', current_timestamp());";
         $result = mysqli_query($conn,$sql);
+        header("location:login.php");
     }
     else
     {
@@ -88,90 +89,101 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     <!-- linking css file here-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loginform.css">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-<!-- navbar section starts here-->
-    <section class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <img src="images/logo3.png" alt="App Logo" class="img-responsive">
-                </div>
-                <div class="menu text-right">
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="categories.php">Categories</a>
-                        </li>
-                        <li>
-                            <a href="foods.php">Foods</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="./login.php">Log In</a>
-                        </li>
-                    </ul>
-                </div>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="register.php" method="POST">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
 
-                <div class="clearfix">
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
 
-                </div>
-            </div>
-        </section>   
-    <!-- navbar section ends here-->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
 
-<!-- Login Form -->
-<div class="loginForm">
-    <h1>Create account</h1>
-    <h5 class="loginText">Enter your details for creating the account</h5>
-    <form action="register.php" method="POST">
-        <input  type="text" class="user_input" placeholder="Username" name="username" id="username">
-        <input type="email" class="user_input" placeholder="Email" name="email" id="email">
-        <input type="password" class="user_input" placeholder="Password" name="password" id="password">
-        <input type="password" class="user_input" placeholder="Confirm Password" name="cnf_password" id="cnf_password">
-        <h5>Already have an account? <a href="./login.php">Click Here</a></h5>
-        <div class="buttons">
-            <button type="submit" class="submit_button">Sign Up</button>
-            <button type="reset" class="reset_button">Reset</button>
-        </div>
-    </form>
-</div>
-<div class="submitMessage">
-<h5>
-    <?php
-        if($error == false)
-        {
-            if($_SERVER['REQUEST_METHOD']=="POST")
-            {
-                if($result)
-                {
-                    echo "Account Created, redirecting to login page<br><br><i><a href='login.php'>Click here</a> if not redirected</i>";
-                    echo "<script>setTimeout(\"location.href = './login.php';\",1500);</script>";
-                }
-                else
-                {
-                    echo "<style>
-                                .submitMessage{
-                                    color: red;
-                                }
-                            </style>";
-                    echo "Failed to create an account";
-                }
-            }
-        }
-        else
-        {
-            echo "<style>.submitMessage{
-                                color: red;
-                                }
-                            </style>";
-            echo "Failed to create an account";
-        }
-    ?>
-</h5>
-</div>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Sign Up
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Have an account?
+						</span>
+
+						<a class="txt2" href="./login.php">
+							Login
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>
