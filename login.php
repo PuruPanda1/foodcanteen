@@ -44,6 +44,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             else
             {
                 // now we can log in the user to our system
+				session_start();
                 $_SESSION['email']=$email;
                 $_SESSION['username']=$row['username'];
                 $_SESSION['loggedin']=true;
